@@ -1,0 +1,13 @@
+[Unit]
+Description=Sample Node App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/app
+ExecStart=/usr/bin/node /home/ubuntu/app/index.js
+Restart=on-failure
+Environment=PORT=8080
+
+[Install]
+WantedBy=multi-user.target
